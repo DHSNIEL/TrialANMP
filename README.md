@@ -1,4 +1,4 @@
 # TrialANMP
 
-Nama: Daniel Hermawan
+Nama: Daniel Hermawan <br />
 NRP: 160421076
