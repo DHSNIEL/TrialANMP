@@ -23,7 +23,7 @@
             android:id="@+id/actionMainFragment"
             app:destination="@id/mainFragment" />
         <argument
-            android:name="player_name"
-            app:argType="string" />
+            android:name="score"
+            app:argType="integer" />
     </fragment>
 </navigation>

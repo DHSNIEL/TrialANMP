@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.navigation.Navigation
+import java.lang.Integer.parseInt
 
 
 class MainFragment : Fragment() {
@@ -21,12 +22,31 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        var randA = (0..30).random()
+        var randB = (0..30).random()
+        var playerPoint :Int = 0
+        val question = view.findViewById<TextView>(R.id.question)
+
+        question.setText(randA.toString() + " + "+ randB.toString())
+
         val btnStart = view.findViewById<Button>(R.id.btnStart)
         btnStart.setOnClickListener {
-            val txtName = view.findViewById<TextView>(R.id.txtTurn)
-            val playerName = txtName.text.toString()
-            val action = MainFragmentDirections.actionGameFragment(playerName)
-            Navigation.findNavController(it).navigate(action)
+            val txtInput = view.findViewById<TextView>(R.id.txtInput)
+            val jawaban = parseInt(txtInput.text.toString())
+
+            val questionTotal = randA + randB
+            if(questionTotal == jawaban){
+                randA = (0..30).random()
+                randB = (0..30).random()
+
+                playerPoint+=1
+                question.setText(randA.toString() + " + "+ randB.toString())
+                txtInput.setText("")
+            }
+            else{
+                val action = MainFragmentDirections.actionGameFragment(playerPoint)
+                Navigation.findNavController(it).navigate(action)
+            }
         }
     }
 
