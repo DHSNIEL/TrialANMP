@@ -8,18 +8,21 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.navigation.Navigation
+import com.example.adv160421076week2.databinding.FragmentMainBinding
 import java.lang.Integer.parseInt
 
 
 class MainFragment : Fragment() {
+    private lateinit var binding : FragmentMainBinding
+
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main, container, false)
+        binding = FragmentMainBinding.inflate(inflater, container, false)
+        return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         var randA = (0..30).random()
@@ -47,6 +50,11 @@ class MainFragment : Fragment() {
                 val action = MainFragmentDirections.actionGameFragment(playerPoint)
                 Navigation.findNavController(it).navigate(action)
             }
+        }
+
+        binding.btnOption.setOnClickListener{
+            val action = MainFragmentDirections.actionOptionFragment()
+            Navigation.findNavController(it).navigate(action)
         }
     }
 
