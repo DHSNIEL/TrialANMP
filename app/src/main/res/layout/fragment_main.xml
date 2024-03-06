@@ -12,11 +12,12 @@
 
         <Button
             android:id="@+id/btnOption"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/Widget.Material3.Button.IconButton.Outlined"
+            android:layout_width="107dp"
+            android:layout_height="59dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="Settings"
+            android:text="Setting"
             android:textSize="12sp"
             app:icon="@drawable/settings"
             app:iconSize="12sp"

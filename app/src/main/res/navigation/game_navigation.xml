@@ -15,6 +15,9 @@
             app:destination="@id/gameFragment" />
         <action
             android:id="@+id/actionOptionFragment"
+            app:destination="@id/optionFragment" />
+        <action
+            android:id="@+id/action_itemHome_to_itemProfile"
             app:destination="@id/itemProfile" />
     </fragment>
     <fragment
@@ -40,5 +43,14 @@
         android:id="@+id/itemProfile"
         android:name="com.example.adv160421076week2.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_itemProfile_to_itemHome"
+            app:destination="@id/itemHome" />
+    </fragment>
+    <dialog
+        android:id="@+id/optionFragment"
+        android:name="com.example.adv160421076week2.OptionFragment"
+        android:label="fragment_option"
+        tools:layout="@layout/fragment_option" />
 </navigation>

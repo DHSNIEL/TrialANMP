@@ -21,6 +21,7 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentMainBinding.inflate(inflater, container, false)
+
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -57,5 +58,4 @@ class MainFragment : Fragment() {
             Navigation.findNavController(it).navigate(action)
         }
     }
-
 }
